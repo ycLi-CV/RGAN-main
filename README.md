@@ -1,2 +1,0 @@
-# RGAN-main
-init
