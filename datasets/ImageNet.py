@@ -136,8 +136,6 @@ def get_imagenet(train, split, batch_size, image_size):
         
         else:
 
-            # known_set = torch.load(os.path.join(save_path, 'known_set.pth'))
-            # unknown_set = torch.load(os.path.join(save_path, 'unknown_set.pth'))
             test_dataset = ImageFolder(root='/home/data/imagenetval/imagenetval/', transform=transform)
             if split == '0':
                 rand_allclass = np.random.RandomState(seed=20230621).permutation(len(test_dataset.classes)).tolist()

@@ -33,10 +33,10 @@ def get_tinyimagenet(train, split, batch_size, image_size):
     test_size = len(dataset) - train_size
     
     torch.manual_seed(20200221)
-    train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
-    # train_dataset, test_dataset = T(transform=transform, root='./datasets/TinyImageNet', train=True,
-    #                                 image_size=image_size), T(transform=transform, root='./datasets/TinyImageNet',
-    #                                                           train=False, image_size=image_size)
+    # train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
+    train_dataset, test_dataset = T(transform=transform, root='./datasets/TinyImageNet', train=True,
+                                    image_size=image_size), T(transform=transform, root='./datasets/TinyImageNet',
+                                                              train=False, image_size=image_size)
 
     if split == '0':
         rand_allclass = np.random.RandomState(seed=20200221).permutation(len(dataset.classes)).tolist()
